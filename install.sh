@@ -171,7 +171,7 @@ else
   UNAME_MACHINE="$(uname -m)"
 
   # On Linux, this script installs to /home/linuxbrew/.linuxbrew only
-  HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+  HOMEBREW_PREFIX="/home/root/.linuxbrew"
   HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
   HOMEBREW_CACHE="${HOME}/.cache/Homebrew"
 
@@ -486,7 +486,7 @@ if [[ -n "${HOMEBREW_ON_MACOS-}" ]]
 then
   [[ "${EUID:-${UID}}" == "0" ]] || have_sudo_access
 elif ! [[ -w "${HOMEBREW_PREFIX}" ]] &&
-     ! [[ -w "/home/linuxbrew" ]] &&
+     ! [[ -w "/home/root" ]] &&
      ! [[ -w "/home" ]] &&
      ! have_sudo_access
 then
